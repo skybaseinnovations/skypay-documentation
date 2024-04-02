@@ -1,0 +1,1059 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../setting-up/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.16">
+    
+    
+      
+        <title>Web Integration - Skypay</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-integration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Skypay" class="md-header__button md-logo" aria-label="Skypay" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Skypay
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web Integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Skypay" class="md-nav__button md-logo" aria-label="Skypay" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Skypay
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Web Integration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Web Integration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-skypay-makes-payments-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Skypay Makes Payments Easy:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-checkout-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating Checkout Link
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating Checkout Link">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-1-using-direct-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Using Direct URL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 1: Using Direct URL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-url-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct URL Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage-in-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage in HTML
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-through-a-get-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Through a GET Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 2: Through a GET Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-form-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Form Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-redirects-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Redirects &amp; Callbacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Redirects & Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failure:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Payment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verify Payment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#successful-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Successful Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Successful Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-status-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payment Status (status):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-provider-response-payment_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payment Provider Response (payment_data):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-skypay-makes-payments-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Skypay Makes Payments Easy:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-checkout-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating Checkout Link
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating Checkout Link">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-1-using-direct-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Using Direct URL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 1: Using Direct URL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-url-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct URL Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage-in-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage in HTML
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-through-a-get-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Through a GET Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 2: Through a GET Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-form-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Form Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-redirects-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Redirects &amp; Callbacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Redirects & Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failure:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Payment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verify Payment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#successful-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Successful Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Successful Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-status-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payment Status (status):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-provider-response-payment_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payment Provider Response (payment_data):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="web-integration">Web Integration</h1>
+<h3 id="how-skypay-makes-payments-easy"><strong>How Skypay Makes Payments Easy:</strong></h3>
+<ol>
+<li><strong>Start Shopping</strong>: A customer picks out something nice on your website and decides to buy it. As they do, your system creates a special code called a <strong><code>code</code></strong> that will be reference for the payment for their order.</li>
+<li><strong>Making the Payment</strong>: With their shopping cart full, the customer hits the checkout button. This sends their order details, including the <strong><code>code</code></strong>, the total cost, and a <strong><code>return_url</code></strong> (so they can easily get back to your site), over to Skypay.</li>
+<li><strong>Payment Time</strong>: The customer is then taken to the Skypay payment page (<strong><code>https://pay.skypay.com</code></strong>), where they pay for their purchase throught various options, as setup on your merchant dashboard.</li>
+<li><strong>Success and Back</strong>: After the payment is done, Skypay lets your site know everything went well by sending a message to the <strong><code>return_url</code></strong> you provided.</li>
+<li><strong>Check It Twice</strong>: If you want, you can double-check to make sure the payment was received. This can be done using the payment-verify API</li>
+<li><strong>All Done</strong>: Now that the payment is confirmed, you can wrap up the order. This might mean sending a product, providing a service, or giving the customer access to something special online.</li>
+<li><strong>Happy Customer</strong>: The customer is happy with their smooth shopping experience, and you've successfully made a sale. Everyone wins.</li>
+</ol>
+<h2 id="generating-checkout-link"><strong>Generating Checkout Link</strong></h2>
+<h4 id="environment">Environment</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">UAT (Testing)</label><label for="__tabbed_1_2">Live</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>&lt;base-app-url&gt;  = https://app-uat.skypay.dev
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>&lt;base-app-url&gt;  = https://app.skypay.dev
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="method-1-using-direct-url"><strong>Method 1: Using Direct URL</strong></h3>
+<p>You can construct a direct URL to the Skypay checkout page by concatenating your parameters into a query string. This method is particularly useful for scenarios where you want to quickly redirect users to the payment process without a server-side action or when directly linking from an email, SMS, or within your application.</p>
+<h4 id="direct-url-structure"><strong>Direct URL Structure</strong></h4>
+<div class="highlight"><pre><span></span><code>&lt;base-app-url&gt;/checkout?api_key=&lt;API_KEY&gt;&amp;amount=&lt;AMOUNT&gt;&amp;success_url=&lt;SUCCESS_URL&gt;&amp;failure_url=&lt;FAILURE_URL&gt;&amp;code=&lt;UNIQUE_ORDER_ID&gt;
+</code></pre></div>
+<p>Simply replace <strong><code>&lt;API_KEY&gt;</code></strong>, <strong><code>&lt;AMOUNT&gt;</code></strong>, <strong><code>&lt;SUCCESS_URL&gt;</code></strong>, <strong><code>&lt;UNIQUE_ORDER_ID&gt;</code></strong> and <strong><code>&lt;FAILURE_URL&gt;</code></strong> with your actual data. This URL can then be used in hyperlinks or redirects to initiate the payment process directly.</p>
+<h4 id="example-usage-in-html"><strong>Example Usage in HTML</strong></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&lt;base-app-url&gt;/checkout?api_key=453440321&amp;amount=100&amp;success_url=https://example.com/success&amp;failure_url=https://example.com/failure&amp;code=2093&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>Pay with Skypay<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>This creates an anchor tag that users can click to be directly taken to the Skypay checkout page with the specified parameters.</p>
+<h3 id="method-2-through-a-get-form"><strong>Method 2: Through a GET Form</strong></h3>
+<p>Alternatively, you can use an HTML form to submit these parameters via a GET request. This method provides a seamless user experience for websites, allowing for a more integrated look and feel.</p>
+<h4 id="html-form-structure"><strong>HTML Form Structure</strong></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&lt;base-app-url&gt;/checkout&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;GET&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;api_key&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;453440321&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;amount&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;code&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;993838&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;https://example.com/success&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;failure_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;https://example.com/failure&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Pay with Skypay&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>In this form, the <strong><code>action</code></strong> attribute points to the Skypay checkout URL, and method <strong><code>GET</code></strong> is specified to append form data into the URL as query parameters. Users will click the "Pay with Skypay" button to initiate the payment process, leading them to the Skypay checkout page.</p>
+<h3 id="parameters"><strong>Parameters</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api_key</td>
+<td>The unique api key for the merchant, available in your dashboard</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>The transaction amount</td>
+</tr>
+<tr>
+<td>success_url</td>
+<td>URL where users are redirected upon success.</td>
+</tr>
+<tr>
+<td>failure_url</td>
+<td>URL where users are redirected upon failure.</td>
+</tr>
+<tr>
+<td>code</td>
+<td>Unique identifier for the order, usually order’s id, this will be required later to verify</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handling-redirects-callbacks"><strong>Handling Redirects &amp; Callbacks</strong></h3>
+<h4 id="success">Success:</h4>
+<p>When a transaction is completed successfully, users are automatically redirected to the <strong><code>success_url</code></strong> specified in your payment form. Along with the redirection, an additional query parameter <strong><code>?data=&lt;base_64_encoded_data&gt;</code></strong> is appended to the URL. This parameter contains base64 encoded JSON data which, when decoded, can offer valuable information for tracking the transaction or updating order status on your system.</p>
+<h4 id="failure">Failure:</h4>
+<p>Should a transaction not go through, users are redirected to the <strong><code>failure_url</code></strong> you've set up. To help diagnose or inform users of the issue, a query parameter is included in the format <strong><code>?message=error_description</code></strong>. This parameter provides a brief explanation or code indicating why the transaction failed, aiding in troubleshooting or customer support efforts.</p>
+<h3 id="additional-notes"><strong>Additional Notes</strong></h3>
+<ul>
+<li><strong>Decoding the <code>data</code> Parameter</strong>: Upon successful transaction redirection, it's recommended to decode the base64 data server-side to maintain security. This decoded JSON can include transaction details such as <strong><code>code</code></strong>, amount, and transaction status.</li>
+<li><strong>Handling Failure Messages</strong>: The <strong><code>message</code></strong> parameter on failure should be properly handled to display user-friendly messages or logs for internal tracking. Be cautious not to expose sensitive or technical details directly to users to avoid confusion or security concerns.</li>
+</ul>
+<h3 id="verify-payment"><strong>Verify Payment</strong></h3>
+<p>Skypay offers a robust API endpoint for merchants to verify the status of a payment transaction. This verification step is crucial for confirming that a payment has been successfully processed before finalizing the order on the merchant's side. Below is a detailed guide on how to use the Verify Payment API.</p>
+<h4 id="endpoint">Endpoint</h4>
+<p><strong>Method: <code>GET</code></strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">UAT (Testing)</label><label for="__tabbed_2_2">Live</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>https://api-uat.skypay.dev/api/v1/checkout/payments-verify/{code_or_order_id}
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>`GET` https://api.skypay.dev/api/v1/checkout/payments-verify/{code_or_order_id}
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Replace <strong><code>{code_or_order_id}</code></strong> with the payment code or your order ID provided at the time of transaction initiation.</p>
+<p><strong>Additional Headers:</strong></p>
+<pre><code>Key: &lt;API-KEY from Merchant Dashboard&gt;
+</code></pre>
+<p><strong>Example Request</strong></p>
+<pre><code>let config = {
+method: 'get',
+url: 'https://api-uat.skypay.dev/api/v1/checkout/payments-verify/&lt;your_order_id&gt;',
+headers: { 
+    'Key': '&lt;your_api_key&gt;', 
+}
+};
+</code></pre>
+<p>Replace <your_order_id> with your actual order ID and <your_api_key> with your Skypay API key.</p>
+<h3 id="successful-response">Successful Response</h3>
+<p>A successful request to the Verify Payment API will return a JSON object containing details about the payment transaction. Below is an example of a successful response:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Existing payment found&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;23dfbfb4-8476-41f0-95b2-38bf79affd2a&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;user_provider_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56bc5495-1b49-45f8-a37b-aef2ce104216&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;provider_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;provider_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eSewa&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;provider_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;esewa&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;provider_logo_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://esewa.com.np/common/images/esewa_logo.png&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;46895&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;API&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-04-01T11:44:05.000000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-04-01T17:33:18.000000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;complete&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;payment_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;transaction_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0007680&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;total_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100.0&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;transaction_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7811574&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;product_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EPAYTEST&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;signed_field_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transaction_code,status,total_amount,transaction_uuid,product_code,signed_field_names&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VtscWlbCOHfkEE1aSdNckBf4nKyiwLa/Da15FtNu8/M=&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>*Understanding the <code>status</code> and <code>payment_data</code> in the Verify Payment API Response</strong></p>
+<h4 id="payment-status-status">Payment Status (<strong><code>status</code></strong>):</h4>
+<p>The <strong><code>status</code></strong> field within the <strong><code>data</code></strong> node of the API response indicates the current status of the transaction. It's crucial for determining the outcome of a payment request. Here are the possible values for <strong><code>status</code></strong> and their meanings:</p>
+<ul>
+<li><strong><code>complete</code></strong>: The transaction was successful. You should proceed with fulfilling the order.</li>
+<li><strong><code>pending</code></strong>: The transaction is still in process. You may need to check again later.</li>
+<li><strong><code>invalid</code></strong>: The transaction request contained errors or was not processed due to invalid parameters. It is recommended to review the request and possibly prompt the user to retry.</li>
+<li><strong><code>cancelled</code></strong>: The transaction was cancelled by the user or due to timeout. You may need to prompt the user to initiate a new payment request if they wish to proceed with the purchase.</li>
+</ul>
+<p>For successful order processing and fulfillment, ensure that the <strong><code>status</code></strong> is <strong><code>complete</code></strong>. This verification is critical to confirm that the payment has been securely processed and received.</p>
+<h4 id="payment-provider-response-payment_data">Payment Provider Response (<strong><code>payment_data</code></strong>):</h4>
+<p>The <strong><code>payment_data</code></strong> node contains detailed information from the payment provider regarding the transaction. Since Skypay integrates with multiple payment gateways, the structure and content of <strong><code>payment_data</code></strong> may vary depending on the provider. Please refer the respective documentation of the payment provider in case of any confusions.</p>
+<h3 id="error-handling">Error Handling</h3>
+<p>In case of a failed transaction or if the payment cannot be found, the API will return a relevant error message and status. Ensure your application is equipped to handle such responses gracefully, informing the user or taking appropriate automated action.</p>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>It's critical to perform this verification step before proceeding with order fulfillment to ensure the integrity of the transaction.</li>
+<li>The <strong><code>status</code></strong> field within the <strong><code>data</code></strong> object indicates the payment status, which can be used to automate next steps in your order processing workflow.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../setting-up/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setting up">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Setting up
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Skybase Innovations Pvt. Ltd.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://skypay.dev" target="_blank" rel="noopener" title="Skypay website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.2 20.4 3.3 41.8 3.3 64zm28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7zm-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6h116.7zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.6z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "header.autohide", "navigation.footer"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>
