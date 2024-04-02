@@ -1,0 +1,48 @@
+site_name: Skypay
+docs:
+  index.md
+  web.md
+theme:
+  name: material
+  features:
+    - content.tabs.link
+    - header.autohide
+    - navigation.footer
+  logo: images/logo.png
+  font:
+    text: Outfit
+  palette:
+   # Palette toggle for light mode
+    - scheme: default
+      primary: white
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+        
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+extra:
+  version:
+    default: stable
+  social:
+  - icon: fontawesome/solid/globe
+    link: https://skypay.dev
+    name: Skypay website
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+copyright: Copyright &copy; 2024 Skybase Innovations Pvt. Ltd.
